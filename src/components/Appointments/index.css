@@ -1,0 +1,32 @@
+/* Write your CSS here */
+.app-container {
+  background-image: linear-gradient(to top, #9796f0, #fbc7d4);
+  min-height: 100vh;
+}
+.appointment-container {
+  background-color: #ffffff;
+}
+.main-heading {
+  color: #171f46;
+  font-family: 'Roboto';
+}
+.title-input {
+  outline: none;
+  border: 1px solid #b5b7c4;
+  padding: 8px;
+  font-family: 'Roboto';
+  border-radius: 5px;
+  width: 100%;
+  max-width: 280px;
+}
+.title-date {
+  font-size: 12px;
+}
+.add-btn {
+  margin-top: 10px;
+}
+.app-star-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
