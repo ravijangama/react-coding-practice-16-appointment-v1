@@ -18,10 +18,15 @@ const AppointmentItem = props => {
   const jsxElement = (
     <li className="appoint-item-container">
       <div>
-        <h1>{title}</h1>
-        <p>{newDate}</p>
+        <p className="title-heading">{title}</p>
+        <p className="date-desc">{newDate}</p>
       </div>
-      <button type="button" data-testid="star" onClick={clickOnStar}>
+      <button
+        className="star-btn"
+        type="button"
+        data-testid="star"
+        onClick={clickOnStar}
+      >
         <img src={isStarred ? FULL_STAR_URL : EMPTY_STAR_URL} alt="star" />
       </button>
     </li>
