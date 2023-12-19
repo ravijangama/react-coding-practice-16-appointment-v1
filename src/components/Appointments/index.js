@@ -56,67 +56,64 @@ class Appointments extends Component {
 
     const jsxElement = (
       <div className="app-container">
-        <div className="appointment-container">
-          <h1 className="main-heading">Add Appointment</h1>
-          <div className="form-image-container">
-            <form onSubmit={this.onAddSubmit} className="form-container">
-              <div className="title-container">
-                <label htmlFor="input" className="title-date">
+        <div className="responsive-container">
+          <div className="appointments-container">
+            <div className="form-image-container">
+              <form onSubmit={this.onAddSubmit} className="form-container">
+                <h1 className="main-heading">Add Appointment</h1>
+
+                <label htmlFor="input" className="title-date-label">
                   TITLE
                 </label>
-                <br />
                 <input
                   onChange={this.onChangeTitle}
-                  className="title-input"
+                  className="title-date-input"
                   placeholder="Title"
                   value={inputTitle}
                   id="input"
                 />
-              </div>
-              <div>
-                <label htmlFor="date" className="title-date">
+
+                <label htmlFor="date" className="title-date-label">
                   DATE
                 </label>
-                <br />
                 <input
                   onChange={this.onChangeDate}
                   type="date"
-                  className="title-input"
+                  className="title-date-input"
                   value={inputDate}
                   id="date"
                 />
-              </div>
-              <br />
-              <button type="submit" className="add-btn">
-                Add
-              </button>
-            </form>
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/appointments-app/appointments-img.png"
-              alt="appointments"
-              className="app-image"
-            />
-          </div>
-          <hr />
-          <div className="app-star-container">
-            <h1 className="appointments">Appointments</h1>
-            <button
-              type="button"
-              className="starred-btn"
-              onClick={this.clickOnStarred}
-            >
-              Starred
-            </button>
-          </div>
-          <ul className="app-ul-container">
-            {appointList.map(eachAppoint => (
-              <AppointmentItem
-                key={eachAppoint.id}
-                appointDetails={eachAppoint}
-                isFavorite={this.setFavorite}
+                <button type="submit" className="add-btn">
+                  Add
+                </button>
+              </form>
+              <img
+                src="https://assets.ccbp.in/frontend/react-js/appointments-app/appointments-img.png"
+                alt="appointments"
+                className="app-image"
               />
-            ))}
-          </ul>
+            </div>
+            <hr className="hr" />
+            <div className="app-star-container">
+              <h1 className="appointments-heading">Appointments</h1>
+              <button
+                type="button"
+                className="starred-btn"
+                onClick={this.clickOnStarred}
+              >
+                Starred
+              </button>
+            </div>
+            <ul className="app-ul-container">
+              {appointList.map(eachAppoint => (
+                <AppointmentItem
+                  key={eachAppoint.id}
+                  appointDetails={eachAppoint}
+                  isFavorite={this.setFavorite}
+                />
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     )
