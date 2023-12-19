@@ -17,18 +17,18 @@ const AppointmentItem = props => {
   const newDate = format(new Date(date), 'dd MMMM yyyy, EEEE')
   const jsxElement = (
     <li className="appoint-item-container">
-      <div>
+      <div className="header-container">
         <p className="title-heading">{title}</p>
-        <p className="date-desc">{newDate}</p>
+        <button
+          className="star-btn"
+          type="button"
+          data-testid="star"
+          onClick={clickOnStar}
+        >
+          <img src={isStarred ? FULL_STAR_URL : EMPTY_STAR_URL} alt="star" />
+        </button>
       </div>
-      <button
-        className="star-btn"
-        type="button"
-        data-testid="star"
-        onClick={clickOnStar}
-      >
-        <img src={isStarred ? FULL_STAR_URL : EMPTY_STAR_URL} alt="star" />
-      </button>
+      <p className="date-desc">Date: {newDate}</p>
     </li>
   )
   return jsxElement
